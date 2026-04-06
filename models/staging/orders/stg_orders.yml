@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: Cleaned and standardized order header data from the raw orders source
+
+    columns:
+      - name: order_id
+        description: Unique identifier for each order
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: Unique identifier for the customer who placed the order
+        tests:
+          - not_null
+
+      - name: restaurant_id
+        description: Unique identifier for the restaurant that received the order
+        tests:
+          - not_null
+
+      - name: order_time
+        description: Timestamp when the order was placed
+
+      - name: delivery_time
+        description: Timestamp when the order was delivered
+
+      - name: status
+        description: Current status of the order
+
+      - name: total_amount
+        description: Total monetary value of the order

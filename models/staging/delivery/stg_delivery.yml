@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_delivery
+    description: Cleaned delivery data
+
+    columns:
+      - name: ORDER_ID 
+        tests: [not_null, unique]
+
+      - name: DELIVERY_PARTNER_ID
+        tests: [not_null]
+
+      - name: DELIVERY_TIME_MINUTES
+
+      

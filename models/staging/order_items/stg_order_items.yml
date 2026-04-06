@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_order_items
+    description: Cleaned order item level data
+
+    columns:
+      - name: ORDER_ITEM_ID
+        tests: [not_null, unique]
+
+      - name: ORDER_ID
+        tests: [not_null]
+
+      - name: ITEM_NAME
+
+      - name: QUANTITY
+
+      - name: UNIT_PRICE

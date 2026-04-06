@@ -1,0 +1,17 @@
+models:
+   - name: stg_restaurants
+     description: Cleaned and standardized restaurants data from the raw restaurants source.
+
+     columns:
+        - name: RESTAURANT_ID
+          description: Unique identifier for each restaurants
+          tests:
+            - not_null
+            - unique
+        - name: RESTAURANT_NAME
+          description: Full name of the RESTAURANT
+
+        - name: CITY
+          description: City of the RESTAURANT
+
+         

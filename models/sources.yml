@@ -1,0 +1,15 @@
+sources:
+    - name: raw
+      database: FOOD_DELIVERY_DB
+      schema: raw
+      tables:
+        - name: CUSTOMERS
+          description: Raw customer data loaded from s3 into snowflake
+        - name: RESTAURANTS
+          description: Raw RESTAURANTS data loaded from s3 into snowflake
+        - name: orders
+          description: Raw orders data loaded from s3 into snowflake
+        - name: delivery
+          description: Raw delivery data loaded from s3 into snowflake
+        - name: order_items
+          description: Raw orders_items data loaded from s3 into snowflake

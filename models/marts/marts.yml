@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Dimension table containing customer details
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+
+  - name: dim_restaurants
+    description: Dimension table containing restaurant details
+    columns:
+      - name: restaurant_id
+        tests: [not_null, unique]
+
+  - name: fct_orders
+    description: Fact table containing order level metrics
+    columns:
+      - name: order_id
+        tests: [not_null, unique]
+
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+
+      - name: restaurant_id
+        tests:
+          - relationships:
+              to: ref('dim_restaurants')
+              field: restaurant_id
+
+  - name: fct_delivery
+    description: Fact table containing delivery performance metrics
+    columns:
+      - name: order_id
+        tests: [not_null]
+
+  - name: mart_daily_business_kpis
+    description: Daily aggregated KPIs for business reporting

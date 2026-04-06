@@ -1,0 +1,19 @@
+models:
+    - name: stg_customers
+      description:  Cleaned and standardized customer data from the raw customers source
+
+      columns:
+       - name: customer_id
+         description: Unique identifier for each customer
+         tests: 
+          - not_null
+          - unique
+
+       - name: CUSTOMER_NAME
+         description: Full name of the customer
+
+       - name: CITY
+         description: City of the customer
+
+       - name: SIGNUP_DATE
+         description: when did customer sigup      
