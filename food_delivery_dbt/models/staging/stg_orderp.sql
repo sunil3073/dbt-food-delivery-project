@@ -8,4 +8,3 @@ select order_id as order_id,
          order_time as order_time,
         status
 from {{ ref('stg_orders') }} 
-where status= 'completed'
