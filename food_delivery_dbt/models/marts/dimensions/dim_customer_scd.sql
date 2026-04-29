@@ -32,7 +32,7 @@ with_flag as (
 
 final as (
     select 
-        MD5(CONCAT(customer_id, '|', date_start)) AS scd_id,
+        hash(CONCAT(customer_id, '|', date_start)) AS scd_id,
         customer_id,
         customer_name,
         city,
