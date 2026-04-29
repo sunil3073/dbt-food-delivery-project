@@ -37,5 +37,3 @@ models:
       - name: order_id
         tests: [not_null]
 
-  - name: mart_daily_business_kpis
-    description: Daily aggregated KPIs for business reporting
