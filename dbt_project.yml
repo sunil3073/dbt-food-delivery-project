@@ -1,11 +1,7 @@
-
-
-name: 'dbt_food_delivery'
+name: 'food_delivery_dbt'
 version: '1.0.0'
 
-# This setting configures which "profile" dbt uses for this project.
-profile: 'dbt_food_delivery'
-
+profile: 'food_delivery_dbt'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -14,16 +10,14 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-clean-targets:         # directories to be removed by `dbt clean`
+clean-targets:
   - "target"
   - "dbt_packages"
 
-
-
 models:
-  dbt_food_delivery:
+  food_delivery_dbt:
     staging:
-       +materialized: view
+      +materialized: view
 
     intermediate:
       +schema: intermediate
