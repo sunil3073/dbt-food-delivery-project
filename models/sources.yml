@@ -1,6 +1,6 @@
 sources:
     - name: raw
-      database: FOOD_DELIVERY_DB
+      database: FOOD_DELIVERY_DEV
       schema: raw
       tables:
         - name: CUSTOMERS

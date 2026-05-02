@@ -1,7 +1,7 @@
-name: 'food_delivery_dbt'
+name: 'dbt_food_delivery'
 version: '1.0.0'
 
-profile: 'food_delivery_dbt'
+profile: 'dbt_food_delivery'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -15,8 +15,10 @@ clean-targets:
   - "dbt_packages"
 
 models:
-  food_delivery_dbt:
+  dbt_food_delivery:
+
     staging:
+      +schema: staging        # ✅ ADD THIS
       +materialized: view
 
     intermediate:

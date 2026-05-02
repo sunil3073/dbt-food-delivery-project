@@ -1,0 +1,50 @@
+name: dbt CI
+
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  dbt:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dbt
+        run: pip install dbt-core dbt-snowflake
+
+      - name: Create profiles.yml
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml <<EOF
+          dbt_food_delivery:
+            target: dev
+            outputs:
+              dev:
+                type: snowflake
+                account: FOHMZVX-XS05522
+                user: sunil
+                password: "Sunil@7993385512"
+                role: ACCOUNTADMIN
+                database: FOOD_DELIVERY_DEV
+                warehouse: FOOD_DWH
+                schema: PUBLIC
+                threads: 4
+          EOF
+
+      - name: dbt deps
+        run: dbt deps
+
+      - name: dbt debug
+        run: dbt debug
+
+      - name: dbt build
+        run: dbt build
