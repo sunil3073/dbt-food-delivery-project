@@ -6,7 +6,16 @@
 
 with order_metrics as (
 
-    select *
+    select         order_id,
+        customer_id,
+        restaurant_id,
+        order_time,
+        delivery_time,
+        status,
+        {{ cents_to_dollars('total_amount')}} as total_amount,
+        total_items,
+        total_quantity,
+        calculated_order_amount
     from {{ ref('int_order_metrics') }}
 
 )

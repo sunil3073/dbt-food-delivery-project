@@ -1,6 +1,15 @@
 version: 2
 
 models:
+  - name: mart_daily_business_kpis
+    columns:
+      - name: order_date
+        tests: [not_null, unique]
+      - name: total_orders
+        tests: [not_null]
+      - name: gross_revenue
+        tests: [not_null]  
+    
   - name: dim_customer
     description: Dimension table containing customer details
     columns:
@@ -36,4 +45,6 @@ models:
     columns:
       - name: order_id
         tests: [not_null]
+
+       
 
