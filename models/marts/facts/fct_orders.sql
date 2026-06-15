@@ -18,7 +18,7 @@ with order_metrics as (
         total_items,
         total_quantity,
         calculated_order_amount,
-        {{ metadata_audit }}
+        {{ metadata_audit () }}
     from {{ ref('int_order_metrics') }}
 
 )
