@@ -39,6 +39,9 @@ models:
           - relationships:
               to: ref('dim_restaurants')
               field: restaurant_id
+      - name: total_amount 
+        tests: 
+          - assert_positive_value          
 
   - name: fct_delivery
     description: Fact table containing delivery performance metrics

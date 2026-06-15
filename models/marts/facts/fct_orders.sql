@@ -6,7 +6,9 @@
 
 with order_metrics as (
 
-    select         order_id,
+    select         
+        {{ dbt_utils.generate_surrogate_key(['order_id']) }} as order_sk,
+        order_id,
         customer_id,
         restaurant_id,
         order_time,
@@ -15,7 +17,8 @@ with order_metrics as (
         {{ cents_to_dollars('total_amount')}} as total_amount,
         total_items,
         total_quantity,
-        calculated_order_amount
+        calculated_order_amount,
+        {{ metadata_audit }}
     from {{ ref('int_order_metrics') }}
 
 )
