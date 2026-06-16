@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: int_order_items_enriched
+    description: "Enriched order items joining orders and order_items staging models"
+
+    columns:
+      - name: order_item_id
+        description: "Unique identifier for each order item"
+        tests: [not_null, unique]
+
+      - name: order_id
+        description: "Foreign key to orders"
+        tests: [not_null]
+
+      - name: unit_price
+        description: "Price per unit of the item"
+        tests: [not_null, assert_positive_value]
+     
+
+      - name: total_price
+        description: "Total price calculated as quantity * unit_price"
+        tests: [not_null, assert_positive_value]

@@ -13,5 +13,6 @@ with customers  as (
 select customer_id,
         customer_name,
         city,
-        signup_date
+        signup_date,
+        current_timestamp() as updated_at
 from customers         

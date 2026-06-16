@@ -16,9 +16,10 @@ clean-targets:
 
 models:
   dbt_food_delivery:
+    +transient: false
 
     staging:
-      +schema: staging        
+      +schema: staging
       +materialized: view
 
     intermediate:
