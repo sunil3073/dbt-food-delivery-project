@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_delivery
-    description: Cleaned delivery data
+    description: Cleaned delivery data from orders delivery column
 
     columns:
       - name: ORDER_ID 

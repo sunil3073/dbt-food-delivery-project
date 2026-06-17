@@ -21,6 +21,7 @@ models:
     staging:
       +schema: staging
       +materialized: view
+      +tags: ['staging']
 
     intermediate:
       +schema: intermediate

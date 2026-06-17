@@ -1,0 +1,3 @@
+select *
+from INTERMEDIATE.INT_ORDER_ITEMS_ENRICHED
+limit 5;

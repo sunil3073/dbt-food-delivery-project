@@ -1,0 +1,12 @@
+version: 2
+
+exposures: 
+    - name: daily_business_dashboard
+      type: dashboard
+      maturity: medium
+      owner:
+        name: Arjun Sharma
+        email: arjun.sharma@dataflowanalytics.com
+        description: "daily business KPI dashboard built on mart_daily_business_kpis"
+        depends on: 
+            -ref('mart_daily_business_kpis')
