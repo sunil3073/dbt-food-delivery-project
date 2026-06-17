@@ -9,4 +9,4 @@ exposures:
         name: Arjun Sharma
         email: arjun.sharma@dataflowanalytics.com
       depends on: 
-          -ref('mart_daily_business_kpis')
+          - ref('mart_daily_business_kpis')
