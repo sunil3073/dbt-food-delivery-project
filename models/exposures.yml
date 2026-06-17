@@ -8,5 +8,5 @@ exposures:
       owner:
         name: Arjun Sharma
         email: arjun.sharma@dataflowanalytics.com
-      depends on: 
+      depends_on: 
           - ref('mart_daily_business_kpis')
