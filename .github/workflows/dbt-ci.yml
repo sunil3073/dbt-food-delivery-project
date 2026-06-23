@@ -32,7 +32,7 @@ jobs:
                 type: snowflake
                 account: FOHMZVX-XS05522
                 user: sunil
-                password: "Sunil@7993385512"
+                password: ${{ secrets.SNOWFLAKE_PASSWORD }}
                 role: ACCOUNTADMIN
                 database: FOOD_DELIVERY_DEV
                 warehouse: FOOD_DWH
