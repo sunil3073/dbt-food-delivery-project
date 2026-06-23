@@ -4,16 +4,26 @@ models:
   - name: mart_daily_business_kpis
     columns:
       - name: order_date
+        description: this is a order_date col
         tests: [not_null, unique]
       - name: total_orders
+        description: this is a total_orders col
         tests: [not_null]
       - name: gross_revenue
+        description: this is a gross_revenue col
         tests: [not_null]  
+    description: This model is belongs to the Arjun Sharma
+    config:
+      meta: 
+        owner: Arjun Sharma
+        team: Analytics
+        refresh_frequency: daily         
     
   - name: dim_customer
     description: Dimension table containing customer details
     columns:
       - name: customer_id
+        description: this is a customer_id col
         tests: [not_null, unique]
 
   - name: dim_restaurants
