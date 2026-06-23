@@ -30,4 +30,7 @@ models:
     marts:
       +schema: marts
       +materialized: table
-       
+
+vars:
+  incremetal_lookback_days: 3  
+

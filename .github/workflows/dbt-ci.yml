@@ -46,5 +46,10 @@ jobs:
       - name: dbt debug
         run: dbt debug
 
-      - name: dbt build
+      - name: dbt build (main only)
+        if: github.event_name == 'push'
         run: dbt build
+        
+      - name: dbt test (pr only)
+        if: github.event_name == 'pull_request'
+        run: dbt test

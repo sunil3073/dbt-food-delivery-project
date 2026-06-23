@@ -1,6 +1,6 @@
 {{ config(
     materialized='incremental',
-    unique_key='order_id',
+    unique_key='order_sk',
     incremental_strategy='merge',
     cluster_by=['order_date']
 ) }}
@@ -28,5 +28,5 @@ select *
 from order_metrics
 
 {% if is_incremental() %}
-where order_time > (select max(order_time) from {{ this }})
+where order_time > (select dateadd(day, -{{var('incremetal_lookback_days', 3) }}, max(order_time)) from {{ this }})
 {% endif %}
