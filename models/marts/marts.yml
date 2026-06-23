@@ -11,7 +11,15 @@ models:
         tests: [not_null]
       - name: gross_revenue
         description: this is a gross_revenue col
-        tests: [not_null]  
+        tests: [not_null]
+      - name: total_customers
+        description: this is total_customers col
+      - name: total_restaurants
+        description: this is a total_restaurants col
+      - name: avg_order_value
+        description: this is a avg_order_value col
+      - name: total_items_sold
+        description: this is a total_items_sold col    
     description: This model is belongs to the Arjun Sharma
     config:
       meta: 
@@ -50,6 +58,7 @@ models:
               to: ref('dim_restaurants')
               field: restaurant_id
       - name: total_amount 
+        description: this is a total_amount col
         tests: 
           - assert_positive_value          
 
