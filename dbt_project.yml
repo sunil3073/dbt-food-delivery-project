@@ -32,5 +32,5 @@ models:
       +materialized: table
 
 vars:
-  incremetal_lookback_days: 3  
+  incremental_lookback_days: 3  
 

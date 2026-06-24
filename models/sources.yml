@@ -5,10 +5,18 @@ sources:
       tables:
         - name: CUSTOMERS
           description: Raw customer data loaded from s3 into snowflake
+          loaded_at_field: SIGNUP_DATE
+          freshness:
+             warn_after: {count: 48, period: hour}
+             error_after: {count: 72, period: hour}
         - name: RESTAURANTS
           description: Raw RESTAURANTS data loaded from s3 into snowflake
         - name: orders
           description: Raw orders data loaded from s3 into snowflake
+          loaded_at_field: order_time
+          freshness: 
+            warn_after: {count: 6 ,period: hour}
+            error_after: {count: 24 ,period: hour}
         - name: delivery
           description: Raw delivery data loaded from s3 into snowflake
         - name: order_items
