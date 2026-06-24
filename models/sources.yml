@@ -11,6 +11,8 @@ sources:
              error_after: {count: 72, period: hour}
         - name: RESTAURANTS
           description: Raw RESTAURANTS data loaded from s3 into snowflake
+          # No loaded_at/timestamp column available in source — freshness check not possible until ingestion adds one
+
         - name: orders
           description: Raw orders data loaded from s3 into snowflake
           loaded_at_field: order_time
@@ -19,5 +21,9 @@ sources:
             error_after: {count: 24 ,period: hour}
         - name: delivery
           description: Raw delivery data loaded from s3 into snowflake
+          # No loaded_at/timestamp column available in source — freshness check not possible until ingestion adds one
+
         - name: order_items
           description: Raw orders_items data loaded from s3 into snowflake
+          # No loaded_at/timestamp column available in source — freshness check not possible until ingestion adds one
+
