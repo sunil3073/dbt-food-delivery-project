@@ -68,5 +68,21 @@ models:
       - name: order_id
         tests: [not_null]
 
+  - name: dim_customer_scd
+    description: This scd type2 used to maintain the historical customer data
+    columns: 
+      - name: scd_id 
+        tests: [ not_null, unique] 
+      - name: customer_id
+        tests: [not_null]
+      - name: date_start
+        tests: 
+           - not_null
+      - name: status_flag
+        tests:
+          - not_null
+          - accepted_values:
+               values: ['active', 'inactive']
+                
        
 

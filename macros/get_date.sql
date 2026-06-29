@@ -1,5 +1,5 @@
 {% macro get_recent_date(days) %}
  
-    DATEADD(DAY,-{{DAYS}},CURRENT_DATE)
+    DATEADD(DAY,-{{days}},CURRENT_DATE)
 
 {% endmacro %}
